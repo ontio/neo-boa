@@ -45,6 +45,10 @@ class ABI(ast.NodeVisitor):
         #self.ABI_result= {"functions":self.AbiFunclist}
         self.ABI_result= {}
 
+    def visit_ClassDef(self, node):
+        print("Error Line %d ONT-python do not support class def\n" % node.lineno)
+        exit()
+
     def visit_FunctionDef(self, node):
         args =[]
         if node.name in self.Funclist:
