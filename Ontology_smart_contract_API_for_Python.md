@@ -3,8 +3,8 @@
 |           boa.interop.Ontology.Attribute |                  GetUsage |                                   transaction_attr | get transaction attribute usage |
 |           boa.interop.Ontology.Attribute |                   GetData |                                   transaction_attr | get transaction attribute data |
 |            boa.interop.Ontology.Contract |                 GetScript |                                           contract | get contract script hash |
-|            boa.interop.Ontology.Contract |                    Create | script, parameter_list, return_type, properties, name, version, author, email, description | create a contract |
-|            boa.interop.Ontology.Contract |                   Migrate | script, parameter_list, return_type, properties, name, version, author, email, description | migrate  contract |
+|            boa.interop.Ontology.Contract |                    Create | script, need_storage, name, version, author, email, description | create a contract |
+|            boa.interop.Ontology.Contract |                   Migrate | script, need_storage, name, version, author, email, description | migrate  contract |
 |              boa.interop.Ontology.Header |                GetVersion |                                             header | get the version of header |
 |              boa.interop.Ontology.Header |             GetMerkleRoot |                                             header | get the merkle root of the transactions contained in the block |
 |              boa.interop.Ontology.Header |          GetConsensusData |                                             header | get the address of the consensus |
