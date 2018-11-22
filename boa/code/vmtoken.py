@@ -635,6 +635,18 @@ class VMTokenizer(object):
             if op == 'Neo.Enumerator':
                 op = 'Neo.Enumerator.Create'
 
+        elif 'System.Header.GetBlockHash' in op:
+            op = op.replace('GetBlockHash', 'GetHash')
+
+        elif 'System.Transaction.GetTransactionHash' in op:
+            op = op.replace('GetTransactionHash', 'GetHash')
+
+        elif 'System.Block.GetTransactionByIndex' in op:
+            op = op.replace('GetTransactionByIndex', 'GetTransaction')
+
+        elif 'System.Blockchain.GetTransactionByHash' in op:
+            op = op.replace('GetTransactionByHash', 'GetTransaction')
+
         syscall_name = op.replace(ONTOLOGY_SC_FRAMEWORK, '').encode('utf-8')
         length = len(syscall_name)
         ba = bytearray([length]) + bytearray(syscall_name)

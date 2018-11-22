@@ -54,7 +54,7 @@ class Transaction:
         return GetUnspentCoins(self)
 
 
-def GetHash(transaction):
+def GetTransactionHash(transaction):
     """
 
     :param transaction:
