@@ -139,6 +139,8 @@ def transfer(from_acct,to_acct,amount):
         return False
     if len(to_acct) != 20 or len(from_acct) != 20:
         return False
+    if amount < 0:
+        return False
     fromKey = concat(BALANCE_PREFIX,from_acct)
     fromBalance = Get(ctx,fromKey)
     if amount > fromBalance:
@@ -181,6 +183,8 @@ def approve(owner,spender,amount):
     :param amount:
     :return: True means success, False or raising exception means failure.
     """
+    if amount < 0:
+        return False
     if amount > balanceOf(owner):
         return False
     if CheckWitness(owner) == False:
@@ -207,7 +211,8 @@ def transferFrom(spender,from_acct,to_acct,amount):
         return False
     if len(spender) != 20 or len(from_acct) != 20 or len(to_acct) != 20:
         raise Exception("transferFrom params failed")
-
+    if amount < 0:
+        return False
     fromKey = concat(BALANCE_PREFIX, from_acct)
     fromBalance = Get(ctx, fromKey)
     if amount > fromBalance:
